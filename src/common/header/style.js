@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import logoPic from '../../statics/image/header/logo.png'
-import bataPic from '../../statics/image/header/bata.png'
-import menuPic from '../../statics/image/header/menu.png'
-import featherPen from '../../statics/image/header/feather-pen.png'
-import appPic from '../../statics/image/header/app.png'
+import logoPic from '../../statics/image/header/logo.png';
+import bataPic from '../../statics/image/header/bata.png';
+import menuPic from '../../statics/image/header/menu.png';
+import featherPen from '../../statics/image/header/feather-pen.png';
+import appPic from '../../statics/image/header/app.png';
 
 export const HeaderWrapper = styled.div`
   height: 58px;
@@ -32,11 +32,27 @@ export const Nav = styled.div`
 export const Container = styled.div`
   display: flex;
   align-items: center;
+  &.search-change {
+    font-size: 13px;
+    color: #969696;
+    transition: .4s;
+    cursor: pointer;
+  }
+  &.search-change:hover{ 
+    color: #333333;
+  }
+  .icon-change {
+    display: block;
+    font-size: 14px;
+    transition: .4s;
+    transform-origin: center center;
+  }
 `
 export const NavOption = styled.div`
   font-size: 17px;
   margin: 0 17px;
   display: flex;
+  cursor: pointer;
   justify-content: center;
   align-items: center;
   &.active {
@@ -67,6 +83,12 @@ export const NavSearch = styled.div`
   align-items: center;
   border: 1px solid #eee;
   transition: 0.5s;
+  .input-icon {
+    background-color: transparent;
+    width: 30px;
+    height: 30px;
+    transition: 0.5s;
+  }
   &.focused {
     width: 320px;
     .input-icon {
@@ -82,15 +104,59 @@ export const NavSearch = styled.div`
 `
 export const NavInput = styled.input.attrs({placeholder: "搜索"})`
   width: 200px;
-  height: 38px;
+  height: 36px;
   font-size: 14px;
   background-color: transparent;
   padding-left: 20px;
   box-sizing: border-box;
   border: none;
   outline: none;
+  transition: 0.5s;
   &::placeholder {
     color: #999;
+  }
+`
+export const SearchInfo = styled.div`
+  width: 250px;
+  box-sizing: border-box;
+  font-size: 17px;
+  position: absolute;
+  top: 49px;
+  padding: 20px 20px 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(0,0,0,.2);
+  border-radius: 4px;
+  user-select: none;
+`
+export const SearchInfoTitle = styled.div`
+  width: 210px;
+  height: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #969696;
+`
+export const SearchInfoItem = styled.span`
+  display: inline-block;
+  margin-left: 5px;
+  text-decoration: none;
+  line-height: 28px;
+  cursor: pointer;
+  .item-a {
+    display: inline;
+    padding: 2px 6px;
+    box-sizing: border-box;
+    border-radius: 3px;
+    color: #787878;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    font-size: 12px;
+    transition: 0.5s;
+  }
+  .item-a:hover { 
+    border: 1px solid #787878;
   }
 `
 export const InputIcon = styled.div`
@@ -99,6 +165,7 @@ export const InputIcon = styled.div`
   text-align: center;
   line-height: 30px;
   border-radius: 50%;
+  cursor: pointer;
   .search-icon {
     color: #969696;
   }
@@ -106,6 +173,7 @@ export const InputIcon = styled.div`
 export const BatePic = styled.div`
   width: 57px;
   height: 25px;
+  cursor: pointer;
   background: url(${bataPic}) no-repeat;
   background-size: contain;
 `
@@ -125,6 +193,7 @@ export const MenuPic = styled.div`
 `
 export const Button = styled.div`
   font-size: 15px;
+  cursor: pointer;
   &.log-in {
     color: #969696;
   }
@@ -136,7 +205,7 @@ export const Button = styled.div`
     text-align: center;
     border: 1px solid rgba(236,97,73,.7);
     border-radius: 20px;
-    transform: 0.5s;
+    transition: 0.5s;
   }
   &.sign-up:hover {
     background-color: #fef7f6;
