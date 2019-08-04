@@ -125,7 +125,7 @@ const mapDispathToProps = (despatch) => {
       } else {
         originAngle = 0;
       }
-      spinIcon.style.transform = 'rotate('+(originAngle+360)+'deg)';
+      spinIcon.style.transform = 'rotate('+(originAngle + 360)+'deg)';
       if (page < totalPage) {
         despatch(actionCreators.changePageList(page + 1));
       } else {
