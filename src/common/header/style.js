@@ -6,13 +6,16 @@ import featherPen from '../../statics/image/header/feather-pen.png';
 import appPic from '../../statics/image/header/app.png';
 
 export const HeaderWrapper = styled.div`
+width: 100%;
   height: 58px;
   padding: 0 40px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  background-color: #ffffff;
+  position: fixed;
+  top: 0;
   border-bottom: 1px solid #F0F0F0;
 `
 export const Logo = styled.a.attrs({href: '/'})`

@@ -1,0 +1,106 @@
+{
+  "articleList": [
+    {
+      "title": "这种运动减肥效果比跑步好几倍",
+      "content": "运动减肥是一种健康的减肥方式，而跑步是很多人会选择的一种运动方式，今天小编要给大家介绍一种简单的运动方式——深蹲，和跑步相比，它有更多的优势.",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/15854993-b6421d96898a0d48.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 4.0,
+      "commentNumber": 290,
+      "likeNumber": 20,
+      "author": "什锦的妆园"
+    },
+    {
+      "title": "一个人最好的生活状态，是做好这4件事",
+      "content": "每个人都有自己的生活， 这就是与众不同的地方。 一百种生活，便有一百种美好。 但若要问我， 一个人最好的生活状态是怎样的？ 我想， 大概做好这4...",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/4298189-1acdeef80b5989ef.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 5.0,
+      "commentNumber": 90,
+      "likeNumber": 2,
+      "author": "李奕甫"
+    },
+    {
+      "title": "清华设计素描高分卷来袭，天哪，怎么会这么好看！",
+      "content": "今天编编给大家看一下清华设计素描的高分卷 这一系列的高分卷来自非常经典的试题“失重” 清华的考题似乎都是源于生活又高于生活的 对于学生来说就需要....",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/14319074-240e741355dbbdc2?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 2.0,
+      "commentNumber": 10,
+      "likeNumber": 43,
+      "author": "素描小五"
+    },
+    {
+      "title": "这种运动减肥效果比跑步好几倍",
+      "content": "运动减肥是一种健康的减肥方式，而跑步是很多人会选择的一种运动方式，今天小编要给大家介绍一种简单的运动方式——深蹲，和跑步相比，它有更多的优势.",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/15854993-b6421d96898a0d48.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 4.0,
+      "commentNumber": 290,
+      "likeNumber": 20,
+      "author": "什锦的妆园"
+    },
+    {
+      "title": "一个人最好的生活状态，是做好这4件事",
+      "content": "每个人都有自己的生活， 这就是与众不同的地方。 一百种生活，便有一百种美好。 但若要问我， 一个人最好的生活状态是怎样的？ 我想， 大概做好这4...",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/4298189-1acdeef80b5989ef.png?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 5.0,
+      "commentNumber": 90,
+      "likeNumber": 2,
+      "author": "李奕甫"
+    },
+    {
+      "title": "清华设计素描高分卷来袭，天哪，怎么会这么好看！",
+      "content": "今天编编给大家看一下清华设计素描的高分卷 这一系列的高分卷来自非常经典的试题“失重” 清华的考题似乎都是源于生活又高于生活的 对于学生来说就需要....",
+      "imageUrl": "https://upload-images.jianshu.io/upload_images/14319074-240e741355dbbdc2?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240",
+      "metaNumber": 2.0,
+      "commentNumber": 10,
+      "likeNumber": 43,
+      "author": "素描小五"
+    }
+  ],
+  "users": [
+    {
+      "id": 3678149,
+      "slug": "b52ff888fd17",
+      "nickname": "简宝玉",
+      "avatar_source": "http://upload.jianshu.io/users/upload_avatars/3678149/b8a58e70-1126-48c9-97e2-8f21a31dfa94.png",
+      "total_likes_count": 53556,
+      "total_wordage": 50722,
+      "is_following_user": false
+    },
+    {
+      "id": 4790772,
+      "slug": "0f438ff0a55f",
+      "nickname": "茶点故事",
+      "avatar_source": "http://upload.jianshu.io/users/upload_avatars/4790772/388e473c-fe2f-40e0-9301-e357ae8f1b41.jpeg",
+      "total_likes_count": 13840,
+      "total_wordage": 564808,
+      "is_following_user": false
+    },
+    {
+      "id": 1835526,
+      "slug": "55b597320c4e",
+      "nickname": "行距版君",
+      "avatar_source": "http://upload.jianshu.io/users/upload_avatars/1835526/83d24e1a-0a0f-43f6-8a1d-289be6101e73.png",
+      "total_likes_count": 54578,
+      "total_wordage": 522968,
+      "is_following_user": false
+    },
+    {
+      "id": 2587459,
+      "slug": "82854a3500fc",
+      "nickname": "穿着prada挤地铁",
+      "avatar_source": "http://upload.jianshu.io/users/upload_avatars/2587459/9f4cfc0f-88b8-420c-b36e-9741e1191644.jpg",
+      "total_likes_count": 4520,
+      "total_wordage": 339595,
+      "is_following_user": false
+    },
+    {
+      "id": 2558050,
+      "slug": "d99a7dfae9e4",
+      "nickname": "阿栈",
+      "avatar_source": "http://upload.jianshu.io/users/upload_avatars/2558050/7761b285-2805-4534-9870-ba7dcc7538ec.jpg",
+      "total_likes_count": 1459,
+      "total_wordage": 468709,
+      "is_following_user": false
+    }
+  ],
+  "total_count": 31655
+}

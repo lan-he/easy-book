@@ -21,7 +21,8 @@ export const HomeWrapperRight = styled.div`
 export const RotaryWrapper = styled.div`
   width: 625px;
   height: 270px;
-  margin: 35px 0;
+  margin-top: 93px;
+  margin-bottom: 35px;
   img {
     width: 625px;
     height: 270px;
@@ -113,10 +114,21 @@ export const Meta = styled.a`
     }
   }
 `
+export const LoadMore = styled.div`
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  margin: 30px auto 60px;
+  color: #ffffff;
+  background-color: #9b9b9b;
+`
 //右侧上半部链接
 export const BoardWrapper = styled.div`
   width: 280px;
-  margin: 32px 0;
+  margin-top: 90px;
+  margin-bottom: 32px;
 `
 export const BoardImage = styled.a`
   width: 280px;
@@ -182,5 +194,72 @@ export const BoardAdvert = styled.a`
 export const AuthorsWrapper = styled.div`
   width: 280px;
   height: 302px;
-  background: yellow;
+`
+export const AuthorsTitle = styled.div`
+  width: 280px;
+  font-size: 14px;
+  color: #969696;
+  display: flex;
+  justify-content: space-between;
+`
+export const AuthorsItem = styled.div`
+  width: 280px;
+  height: 47px;
+  margin-top: 15px;
+  display: flex;
+  img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  .authors-item-left {
+    flex: 1;
+  }
+  .name-follow {
+    display: flex;
+    justify-content: space-between;
+  }
+  .name {
+    color: #333;
+    font-size: 14px;
+  }
+  .follow {
+    font-size: 13px;
+    color: #42c02e;
+  }
+  .information {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #969696;
+  }
+`
+export const AuthorsAll = styled.div`
+  height: 35px;
+  line-height: 33px;
+  text-align: center;
+  font-size: 13px;
+  color: #787878;
+  background-color: #f7f7f7;
+  border: 1px solid #dcdcdc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 25px;
+  cursor: pointer;
+`
+export const BackTop = styled.div`
+  width: 50px;
+  height: 50px;
+  line-height: 48px;
+  text-align: center;
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  transition: .5s;
+  cursor: pointer;
+  :hover {
+    background-color: #dcdcdc;
+  }
 `
