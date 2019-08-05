@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {RotaryWrapper} from '../style.js';
 
-class Rotary extends Component {
+class Rotary extends PureComponent {
   render() {
     return (
       <RotaryWrapper>

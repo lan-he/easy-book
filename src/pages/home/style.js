@@ -31,6 +31,9 @@ export const RotaryWrapper = styled.div`
 //左侧下半部文章列表
 export const ArticleListWrapper = styled.div`
   width: 625px;
+  a {
+    text-decoration: none;
+  }
 `
 export const ArticleListItem = styled.div`
   width: 625px;
@@ -51,14 +54,19 @@ export const ListItemRight = styled.div`
     height: 100px;
   }
 `
-export const ListItemLeftContent = styled.a`
+export const ListItemLeftContent = styled.div`
   width: 458px;
   display: block;
   .content-title {
-    display: inherit;
+    display: block;
+    margin-bottom: 10px;
+    color: #000;
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 700;
+    :hover{
+      text-decoration: underline;
+    }
   }
   .content-details {
     font-size: 13px;
@@ -73,7 +81,7 @@ export const ListItemLeftContent = styled.a`
     -webkit-box-orient: vertical;
   }
 `
-export const Meta = styled.a`
+export const Meta = styled.div`
   width: 458px;
   height: 20px;
   line-height: 20px;

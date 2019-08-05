@@ -18,7 +18,7 @@ width: 100%;
   top: 0;
   border-bottom: 1px solid #F0F0F0;
 `
-export const Logo = styled.a.attrs({href: '/'})`
+export const Logo = styled.div`
   width: 100px;
   height: 56px;
   display: block;

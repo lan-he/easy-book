@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   BoardWrapper,
   BoardImage,
@@ -6,7 +6,7 @@ import {
   BoardAdvert
 } from '../style.js';
 
-class Board extends Component {
+class Board extends PureComponent {
   render() {
     return (
       <BoardWrapper>

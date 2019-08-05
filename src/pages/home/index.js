@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { actionCreators } from './store';
 import Board from './components/Board.js';
@@ -12,10 +12,9 @@ import {
   BackTop
 } from './style';
 
-class Home extends Component {
+class Home extends PureComponent {
   
   render() {
-    console.log(this.props.showScroll+"sasdasdsa");
     return (
       <HomeWrapper>
         <HomeWrapperLeft>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { actionCreators } from './store'
 import '../../statics/iconfont/iconfont.css';
 import {
@@ -59,7 +60,9 @@ class Header extends Component {
   render() {
     return (
       <HeaderWrapper>
-        <Logo/>
+        <Link to="/">
+          <Logo/>
+        </Link>
         <Nav>
           <Container>
             <NavOption className="active"><MenuPic/>首页</NavOption>
