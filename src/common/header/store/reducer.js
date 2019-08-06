@@ -2,6 +2,7 @@ import * as constants from './constants.js';
 import { fromJS } from 'immutable';
 
 const defaultState = fromJS({
+  showHeader: true,
   focused: false,
   mouseIn: false,
   labelList: [],

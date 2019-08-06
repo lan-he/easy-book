@@ -226,6 +226,54 @@ export const Button = styled.div`
     background-color: #ea6f5a;
   }
 `
+
+export const SignInFront = styled.div`
+  width: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+export const UserOptions = styled.div`
+  width: 80px;
+  height: 56px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  :hover {
+    background-color: #f5f5f5;
+  }
+  :hover .service-list{
+    display: block;
+  }
+  img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+`
+export const ServiceList = styled.div`
+  width: 160px;
+  position: absolute;
+  left: 1px;
+  top: 58px;
+  background-color: #fff;
+  border-radius: 0 0 4px 4px;
+  border-color: transparent;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+  display: none;
+  a {
+    display: block;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: #333;
+    :hover {
+      background-color: #f5f5f5;
+    }
+  }
+`
 export const FeatherPenPic = styled.div`
   width: 20px;
   height: 20px;

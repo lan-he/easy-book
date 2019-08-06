@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store'
+import { userLogOut } from '../../pages/signIn/store/actionCreators'
 import '../../statics/iconfont/iconfont.css';
 import {
   HeaderWrapper,
@@ -21,6 +22,9 @@ import {
   SearchInfoTitle,
   SearchInfoItem,
   InputIcon,
+  UserOptions,
+  ServiceList,
+  SignInFront,
 } from './style';
 
 class Header extends Component {
@@ -57,52 +61,86 @@ class Header extends Component {
       return null;
     } 
   }
-  render() {
-    return (
-      <HeaderWrapper>
-        <Link to="/">
-          <Logo/>
-        </Link>
-        <Nav>
-          <Container>
-            <NavOption className="active"><MenuPic/>首页</NavOption>
-            <NavOption className="app-download"><AppPic/>下载App</NavOption>
-            <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
-              <NavInput
-                className="nav-input"
-                onFocus={() => this.props.headerInputFocus(this.props.labelList)}
-                onBlur={this.props.headerInputBlur}
-              />
-              <InputIcon className="input-icon">
-                <i className="iconfont search-icon">&#xe737;</i> 
-              </InputIcon>
-              {this.getListArea()}
-            </NavSearch>
-          </Container>
-          <Container>
-            <NavOption>
-              <i className="iconfont typeface">&#xe76a;</i> 
-            </NavOption>
-            <BatePic/>
-          </Container>
-        </Nav>
-        <Addition>
-          <Button className="log-in">登录</Button>
+  judgingLoginStatus() {
+    const { whetherSignIn, userLogOut } = this.props;
+    if (!whetherSignIn) {
+      return (
+        <SignInFront>
+          <Link to="/sign_in">
+            <Button className="log-in">登录</Button>
+          </Link>
           <Button className="sign-up">注册</Button>
-          <Button className="write-btn"><FeatherPenPic/>写文章</Button>
-        </Addition>
-      </HeaderWrapper>
-    )
+        </SignInFront>
+      )
+    } else {
+      return (
+        <UserOptions>
+          <img alt="" src="https://cdn2.jianshu.io/assets/default_avatar/9-cceda3cf5072bcdd77e8ca4f21c40998.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120"/>
+          <i className="iconfont">&#xe603;</i>
+          <ServiceList className="service-list">
+            <Link to="/">
+              <span>我的主页</span>
+            </Link>
+            <Link to="/" onClick={userLogOut}>
+              <span>退出登陆</span>
+            </Link>
+          </ServiceList>
+        </UserOptions>
+      )
+    }
+  }
+  render() {
+    if (this.props.showHeader) {
+      return (
+        <HeaderWrapper>
+          <Link to="/">
+            <Logo/>
+          </Link>
+          <Nav>
+            <Container>
+              <NavOption className="active"><MenuPic/>首页</NavOption>
+              <NavOption className="app-download"><AppPic/>下载App</NavOption>
+              <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
+                <NavInput
+                  className="nav-input"
+                  onFocus={() => this.props.headerInputFocus(this.props.labelList)}
+                  onBlur={this.props.headerInputBlur}
+                />
+                <InputIcon className="input-icon">
+                  <i className="iconfont search-icon">&#xe737;</i> 
+                </InputIcon>
+                {this.getListArea()}
+              </NavSearch>
+            </Container>
+            <Container>
+              <NavOption>
+                <i className="iconfont typeface">&#xe76a;</i> 
+              </NavOption>
+              <BatePic/>
+            </Container>
+          </Nav>
+          <Addition>
+            {this.judgingLoginStatus()}
+            <Button className="write-btn"><FeatherPenPic/>写文章</Button>
+          </Addition>
+        </HeaderWrapper>
+      )
+    } else {
+      return null
+    }
+    
   }
 }
 
 const mapStateToProps = (state) => {
   return {
+    showHeader: state.getIn(['header', 'showHeader']),
     focused: state.getIn(['header', 'focused']),
     labelList: state.getIn(['header', 'labelList']),
     page: state.getIn(['header', 'page']),
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn']),
+    whetherSignIn: state.getIn(['signIn', 'whetherSignIn']),
   }
 }
 
@@ -135,6 +173,9 @@ const mapDispathToProps = (despatch) => {
         despatch(actionCreators.changePageList(1));
       }
     },
+    userLogOut() {
+      despatch(userLogOut());
+    }
   }
 }
 

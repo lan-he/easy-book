@@ -31,9 +31,6 @@ export const RotaryWrapper = styled.div`
 //左侧下半部文章列表
 export const ArticleListWrapper = styled.div`
   width: 625px;
-  a {
-    text-decoration: none;
-  }
 `
 export const ArticleListItem = styled.div`
   width: 625px;
@@ -144,19 +141,19 @@ export const BoardImage = styled.a`
   display: block;
   margin: 8px 0;
   &.board-imagea {
-    background: url(${boardImagea});
+    background: url(${boardImagea}) no-repeat;
     background-size: contain;
   }
   &.board-imageb {
-    background: url(${boardImageb});
+    background: url(${boardImageb}) no-repeat;
     background-size: contain;
   }
   &.board-imagec {
-    background: url(${boardImagec});
+    background: url(${boardImagec}) no-repeat;
     background-size: contain;
   }
   &.board-imaged {
-    background: url(${boardImaged});
+    background: url(${boardImaged}) no-repeat;
     background-size: contain;
   }
 `
