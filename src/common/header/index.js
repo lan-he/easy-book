@@ -121,7 +121,9 @@ class Header extends Component {
           </Nav>
           <Addition>
             {this.judgingLoginStatus()}
-            <Button className="write-btn"><FeatherPenPic/>写文章</Button>
+            <Link to="/write">
+              <Button className="write-btn"><FeatherPenPic/>写文章</Button>
+            </Link>
           </Addition>
         </HeaderWrapper>
       )

@@ -7,6 +7,7 @@ import Header from './common/header';
 import Home from './pages/home';
 import Detail from './pages/detail';
 import SignIn from './pages/signIn';
+import Write from './pages/write';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path='/' exact component={Home}></Route>
         <Route path='/detail' component={Detail}></Route>
         <Route path='/sign_in' component={SignIn}></Route>
+        <Route path='/write' component={Write}></Route>
       </BrowserRouter>
     </Provider>
   );
