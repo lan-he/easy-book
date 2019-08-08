@@ -256,10 +256,10 @@ export const ServiceList = styled.div`
   width: 160px;
   position: absolute;
   left: 1px;
-  top: 58px;
+  top: 57px;
   background-color: #fff;
   border-radius: 0 0 4px 4px;
-  border-color: transparent;
+  border: 1px solid #F0F0F0;
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
   display: none;
   a {

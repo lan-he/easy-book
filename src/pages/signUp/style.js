@@ -25,10 +25,10 @@ export const SingTitle = styled.div`
   margin-bottom: 50px;
   a {
     padding: 10px 0;
-    color: #969696;
   }
   span {
     padding: 10px;
+    color: #969696;
     cursor: pointer;
     :hover{
       border-bottom: 2px solid #ea6f5a;
@@ -58,17 +58,20 @@ export const SingInInput = styled.div`
     font-size: 14px;
     outline: none;
   }
-  .input-account {
+  .input-name {
     border-radius: 4px 4px 0 0;
+  }
+  .input-account {
+    border-top: none;
   }
   .input-password {
     border-radius: 0 0 4px 4px;
-    border-top: 0 solid #c8c8c8;
+    border-top: none;
   }
 `
-export const SingInButton = styled.div`
+export const SingUpButton = styled.div`
   button {
-    background: #3194d0;
+    background: #3db922;
     margin-top: 20px;
     width: 100%;
     padding: 9px 18px;
@@ -82,18 +85,15 @@ export const SingInButton = styled.div`
     clear: both;
   }
 `
-export const SingInRemember = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  font-size: 14px;
+export const Clause = styled.div`
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 20px;
   color: #969696;
-  span  {
-    :hover{
-      color: #2f2f2f;
-      cursor: pointer;
-    }
+  a {
+    color: #3194d0;
   }
 `
 export const CommunityAccount = styled.div`

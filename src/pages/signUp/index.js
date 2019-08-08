@@ -8,8 +8,8 @@ import {
   SingInMain,
   SingTitle,
   SingInInput,
-  SingInButton,
-  SingInRemember,
+  SingUpButton,
+  Clause,
   CommunityAccount,
   Partitionline,
   LinkWrap
@@ -26,30 +26,28 @@ class Home extends PureComponent {
         <Logo/>
         <SingInMain>
           <SingTitle>
-            <span className="active">登陆</span>
-            <b>·</b>
-            <Link to="/sign_up">
-              <span>注册</span>
+            <Link to="/sign_in">
+              <span>登陆</span>
             </Link>
+            <b>·</b>
+            <span className="active">注册</span>
           </SingTitle>
           <SingInInput>
-            <input className="input-account" placeholder="手机号或邮箱"/>
-            <input className="input-password" placeholder="密码"/>
+            <input className="input-name" placeholder="你的昵称"/>
+            <input className="input-account" placeholder="手机号"/>
+            <input className="input-password" placeholder="设置密码"/>
           </SingInInput>
-          <SingInButton>
-            <SingInRemember>
-              <label>
-                <input type="checkbox"/>
-                记住我
-              </label>
-              <span>登录遇到问题 ？</span>
-            </SingInRemember>
-            <button onClick={this.props.signInEvent}>登陆</button>
-          </SingInButton>
+          <SingUpButton>
+            <button onClick={this.props.signInEvent}>注册</button>
+          </SingUpButton>
+          <Clause>
+            点击 “注册” 即表示您同意并愿意遵守简书 <br/>
+            <Link to="/">用户协议</Link>&nbsp;和&nbsp;<Link to="/">隐私政策</Link>
+          </Clause>
           <CommunityAccount>
             <Partitionline>
               <em></em>
-              <span>社交帐号登录</span>
+              <span>社交帐号直接注册</span>
               <em></em>
             </Partitionline>
             <LinkWrap>

@@ -69,7 +69,9 @@ class Header extends Component {
           <Link to="/sign_in">
             <Button className="log-in">登录</Button>
           </Link>
-          <Button className="sign-up">注册</Button>
+          <Link to="/sign_up">
+            <Button className="sign-up">注册</Button>
+          </Link>
         </SignInFront>
       )
     } else {
