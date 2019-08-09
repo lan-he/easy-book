@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 import logoPic from '../../statics/image/header/logo.png';
 import bataPic from '../../statics/image/header/bata.png';
-import menuPic from '../../statics/image/header/menu.png';
 import featherPen from '../../statics/image/header/feather-pen.png';
 import appPic from '../../statics/image/header/app.png';
 
 export const HeaderWrapper = styled.div`
-width: 100%;
+  width: 100%;
   height: 58px;
   padding: 0 40px;
   box-sizing: border-box;
@@ -186,13 +185,6 @@ export const Addition = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-`
-export const MenuPic = styled.div`
-  width: 20px;
-  height: 20px;
-  background: url(${menuPic}) no-repeat;
-  background-size: contain;
-  margin-right: 10px;
 `
 export const Button = styled.div`
   font-size: 15px;

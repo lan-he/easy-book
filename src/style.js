@@ -1,4 +1,5 @@
-import { createGlobalStyle } from 'styled-components' 
+import { createGlobalStyle } from 'styled-components';
+import "./statics/iconfont/iconfont.css"
 
 export const GlobalStyle = createGlobalStyle `
   html, body, div, span, applet, object, iframe,

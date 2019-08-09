@@ -14,7 +14,6 @@ import {
   BatePic,
   Addition,
   Button,
-  MenuPic,
   FeatherPenPic,
   AppPic,
   NavInput,
@@ -100,7 +99,7 @@ class Header extends Component {
           </Link>
           <Nav>
             <Container>
-              <NavOption className="active"><MenuPic/>首页</NavOption>
+              <NavOption className="active"><i className="iconfont">&#xe600;</i>首页</NavOption>
               <NavOption className="app-download"><AppPic/>下载App</NavOption>
               <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
                 <NavInput
@@ -109,7 +108,7 @@ class Header extends Component {
                   onBlur={this.props.headerInputBlur}
                 />
                 <InputIcon className="input-icon">
-                  <i className="iconfont search-icon">&#xe737;</i> 
+                  <i className="iconfont search-icon">&#xe737;</i>
                 </InputIcon>
                 {this.getListArea()}
               </NavSearch>

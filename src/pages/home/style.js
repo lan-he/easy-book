@@ -21,12 +21,62 @@ export const HomeWrapperRight = styled.div`
 export const RotaryWrapper = styled.div`
   width: 625px;
   height: 270px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
   margin-top: 93px;
   margin-bottom: 35px;
+  cursor: pointer;
+  :hover .block {
+    opacity: 1;
+  }
+`
+export const RotaryContainer = styled.div`
+  width: 625px;
+  height: 270px;
+  
   img {
     width: 625px;
     height: 270px;
+    opacity: 0;
+    transition: .6s;
+    position: absolute;
   }
+  .top-img {
+    opacity: 1;
+  }
+`
+export const LRButtons = styled.div`
+  width: 625px;
+  height: 50px;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 50%;
+  transform: translate(0, -50%);
+  div {
+    width: 40px;
+    height: 50px;
+    color: #fff;
+    line-height: 50px;
+    text-align: center;
+    opacity: 0;
+    transition: .3s;
+    background-color: rgba(0,0,0,.4);
+  }
+  .switch-left {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+  .switch-right {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+`
+export const ChoiceButtons = styled.div`
+  width: 625px;
+  height: 270px;
 `
 //左侧下半部文章列表
 export const ArticleListWrapper = styled.div`
