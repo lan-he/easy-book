@@ -13,7 +13,6 @@ import {
   BatePic,
   Addition,
   Button,
-  FeatherPenPic,
   NavInput,
   SearchInfo,
   SearchInfoTitle,
@@ -153,7 +152,10 @@ class Header extends Component {
             </Container>
             {this.loginStatusHone()}
             <Link to="/write">
-              <Button className="write-btn"><FeatherPenPic/>写文章</Button>
+              <Button className="write-btn">
+                <i className="iconfont">&#xe616;</i>
+                写文章
+              </Button>
             </Link>
           </Addition>
         </HeaderWrapper>

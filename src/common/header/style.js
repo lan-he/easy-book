@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import logoPic from '../../statics/image/header/logo.png';
 import bataPic from '../../statics/image/header/bata.png';
-import featherPen from '../../statics/image/header/feather-pen.png';
 
 export const HeaderWrapper = styled.div`
   width: 100%;
@@ -273,11 +272,4 @@ export const ServiceList = styled.div`
       background-color: #f5f5f5;
     }
   }
-`
-export const FeatherPenPic = styled.div`
-  width: 20px;
-  height: 20px;
-  background: url(${featherPen}) no-repeat;
-  background-size: contain;
-  margin-right: 10px;
 `
