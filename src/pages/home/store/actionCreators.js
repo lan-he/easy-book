@@ -10,6 +10,9 @@ const splicingHomeList = (data) => ({
 	type: constants.SPLIC_HOME_LIST,
 	data: fromJS(data),
 });
+const showLoading = (data) => ({
+	type: constants.SHOW_LOADING,
+});
 export const changeTopShow = (show) => ({
 	type: constants.CHANGE_TOP_SHOW,
 	show
@@ -24,9 +27,13 @@ export const getHomeArticleList = () => {
 };
 export const getMoreList = () => {
   return (dispatch) => {
-    axios.get('/api/homeMoreList.json').then((res) => {
-      const data = res.data;
-      dispatch(splicingHomeList(data));
-    });
+    dispatch(showLoading());
+    setTimeout(() => {
+      axios.get('/api/homeMoreList.json').then((res) => {
+        const data = res.data;
+        dispatch(splicingHomeList(data));
+      });
+    },800)
+    
   };
 };

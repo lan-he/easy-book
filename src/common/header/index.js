@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { actionCreators } from './store'
-import { userLogOut } from '../../pages/signIn/store/actionCreators'
-import '../../statics/iconfont/iconfont.css';
+import { actionCreators } from './store';
+import { userLogOut } from '../../pages/signIn/store/actionCreators';
 import {
   HeaderWrapper,
   Logo,
@@ -15,7 +14,6 @@ import {
   Addition,
   Button,
   FeatherPenPic,
-  AppPic,
   NavInput,
   SearchInfo,
   SearchInfoTitle,
@@ -60,7 +58,7 @@ class Header extends Component {
       return null;
     } 
   }
-  judgingLoginStatus() {
+  loginStatusHone() {
     const { whetherSignIn, userLogOut } = this.props;
     if (!whetherSignIn) {
       return (
@@ -90,6 +88,41 @@ class Header extends Component {
       )
     }
   }
+
+  loginStatusFind() {
+    const { whetherSignIn } = this.props;
+    if (!whetherSignIn) {
+      return (
+        <Container>
+          <NavOption className="active">
+            <i className="iconfont">&#xe600;</i>
+            首页
+          </NavOption>
+          <NavOption className="app-download">
+            <i className="iconfont">&#xe611;</i>
+            下载App
+          </NavOption>
+        </Container>
+      )
+    } else {
+      return (
+        <Container>
+          <NavOption className="active">
+            <i className="iconfont">&#xe613;</i>
+            发现
+          </NavOption>
+          <NavOption className="app-download">
+            <i className="iconfont">&#xe612;</i>
+            关注
+          </NavOption>
+          <NavOption className="app-download">
+            <i className="iconfont">&#xe627;</i>
+            消息
+          </NavOption>
+        </Container>
+      )
+    }
+  }
   render() {
     if (this.props.showHeader) {
       return (
@@ -98,30 +131,27 @@ class Header extends Component {
             <Logo/>
           </Link>
           <Nav>
-            <Container>
-              <NavOption className="active"><i className="iconfont">&#xe600;</i>首页</NavOption>
-              <NavOption className="app-download"><AppPic/>下载App</NavOption>
-              <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
-                <NavInput
-                  className="nav-input"
-                  onFocus={() => this.props.headerInputFocus(this.props.labelList)}
-                  onBlur={this.props.headerInputBlur}
-                />
-                <InputIcon className="input-icon">
-                  <i className="iconfont search-icon">&#xe737;</i>
-                </InputIcon>
-                {this.getListArea()}
-              </NavSearch>
-            </Container>
+            {this.loginStatusFind()}
+            <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
+              <NavInput
+                className="nav-input"
+                onFocus={() => this.props.headerInputFocus(this.props.labelList)}
+                onBlur={this.props.headerInputBlur}
+              />
+              <InputIcon className="input-icon">
+                <i className="iconfont search-icon">&#xe737;</i>
+              </InputIcon>
+              {this.getListArea()}
+            </NavSearch>
+          </Nav>
+          <Addition>
             <Container>
               <NavOption>
                 <i className="iconfont typeface">&#xe76a;</i> 
               </NavOption>
               <BatePic/>
             </Container>
-          </Nav>
-          <Addition>
-            {this.judgingLoginStatus()}
+            {this.loginStatusHone()}
             <Link to="/write">
               <Button className="write-btn"><FeatherPenPic/>写文章</Button>
             </Link>
@@ -131,7 +161,6 @@ class Header extends Component {
     } else {
       return null
     }
-    
   }
 }
 

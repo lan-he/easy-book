@@ -25,7 +25,7 @@ class Home extends PureComponent {
           <Board></Board>
           <Authors></Authors>
         </HomeWrapperRight>
-        {this.props.showScroll ? <BackTop onClick={this.homeScrollTop}><i className="iconfont">&#xe600;</i></BackTop> : null}
+        {this.props.showScroll ? <BackTop onClick={this.homeScrollTop}><i className="iconfont">&#xe626;</i></BackTop> : null}
       </HomeWrapper>
     )
   }

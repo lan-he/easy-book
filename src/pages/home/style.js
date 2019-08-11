@@ -175,7 +175,7 @@ export const LoadMore = styled.div`
   line-height: 40px;
   text-align: center;
   border-radius: 20px;
-  margin: 30px auto 60px;
+  margin: 30px auto 40px;
   color: #ffffff;
   background-color: #9b9b9b;
 `

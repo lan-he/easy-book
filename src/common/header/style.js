@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import logoPic from '../../statics/image/header/logo.png';
 import bataPic from '../../statics/image/header/bata.png';
 import featherPen from '../../statics/image/header/feather-pen.png';
-import appPic from '../../statics/image/header/app.png';
 
 export const HeaderWrapper = styled.div`
   width: 100%;
@@ -28,11 +27,12 @@ export const Nav = styled.div`
   width: 945px;
   height: 58px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 `
 export const Container = styled.div`
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   &.search-change {
     font-size: 13px;
@@ -52,17 +52,23 @@ export const Container = styled.div`
 `
 export const NavOption = styled.div`
   font-size: 17px;
-  margin: 0 17px;
   display: flex;
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  i {
+    font-size: 20px;
+    display: block;
+    margin-right: 5px;
+  }
   &.active {
+    width: 90px;
+    height: 56px;
     color: #ea6f5a;
     margin-left: 100px;
   }
   &.app-download {
-    width: 120px;
+    width: 100px;
     height: 56px;
     line-height: 56px;
     text-align: center;
@@ -84,6 +90,7 @@ export const NavSearch = styled.div`
   display: flex;
   align-items: center;
   border: 1px solid #eee;
+  margin-left: 30px;
   transition: 0.5s;
   .input-icon {
     background-color: transparent;
@@ -176,11 +183,12 @@ export const BatePic = styled.div`
   width: 57px;
   height: 25px;
   cursor: pointer;
+  margin-left: 20px;
   background: url(${bataPic}) no-repeat;
   background-size: contain;
 `
 export const Addition = styled.div`
-  width: 300px;
+  width: 400px;
   height: 58px;
   display: flex;
   justify-content: space-around;
@@ -270,13 +278,6 @@ export const FeatherPenPic = styled.div`
   width: 20px;
   height: 20px;
   background: url(${featherPen}) no-repeat;
-  background-size: contain;
-  margin-right: 10px;
-`
-export const AppPic = styled.div`
-  width: 20px;
-  height: 20px;
-  background: url(${appPic}) no-repeat;
   background-size: contain;
   margin-right: 10px;
 `

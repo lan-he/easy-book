@@ -5,6 +5,7 @@ const defaultState = fromJS({
   homeList: [],
   authorList: [],
   showScroll: false,
+  showLoading: false,
 });
 
 export default (state = defaultState, action) => {
@@ -15,7 +16,12 @@ export default (state = defaultState, action) => {
         'authorList': fromJS(action.data.users),
       });
     case constants.SPLIC_HOME_LIST:
-      return state.set('homeList', state.get('homeList').concat(action.data));
+      return state.merge({
+        'homeList': state.get('homeList').concat(action.data),
+        'showLoading': false,
+      });
+    case constants.SHOW_LOADING:
+      return state.set('showLoading', true);
     case constants.CHANGE_TOP_SHOW:
       return state.set('showScroll', action.show);
     default:

@@ -17,6 +17,9 @@ export const WriteWrapper = styled.div`
   .for-editor {
     height: 115%;
   }
+  .for-editor {
+    flex: 1;
+  }
 `
 export const WriteBackHome = styled.div`
   width: 100%;
