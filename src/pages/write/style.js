@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const WriteWrapper = styled.div`
   width: 100%;
-  min-height: 750px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   position: absolute;
+  z-index: 999;
   background-color: #FFF;
   .for-container{
     flex: 1;

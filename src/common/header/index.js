@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
 import { userLogOut } from '../../pages/signIn/store/actionCreators';
+import defaultImg from '../../statics/image/header/default.jpg'
 import {
   HeaderWrapper,
   Logo,
@@ -73,7 +74,7 @@ class Header extends Component {
     } else {
       return (
         <UserOptions>
-          <img alt="" src="https://cdn2.jianshu.io/assets/default_avatar/9-cceda3cf5072bcdd77e8ca4f21c40998.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/120/h/120"/>
+          <img alt="" src={defaultImg}/>
           <i className="iconfont">&#xe603;</i>
           <ServiceList className="service-list">
             <Link to="/">

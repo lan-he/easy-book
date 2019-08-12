@@ -24,7 +24,6 @@ export const RotaryWrapper = styled.div`
   border-radius: 6px;
   overflow: hidden;
   position: relative;
-  z-index: -1;
   margin-top: 93px;
   margin-bottom: 35px;
   cursor: pointer;
@@ -75,8 +74,6 @@ export const LRButtons = styled.div`
   }
 `
 export const ChoiceButtons = styled.div`
-  width: 625px;
-  height: 270px;
 `
 //左侧下半部文章列表
 export const ArticleListWrapper = styled.div`

@@ -2,8 +2,9 @@ import styled from 'styled-components';
 
 export const SignInWrapper = styled.div`
   width: 100%;
-  min-height: 750px;
+  min-height: 100vh;
   position: absolute;
+  z-index: 999;
   background-color: #f1f1f1;
 `
 export const Logo = styled.div`

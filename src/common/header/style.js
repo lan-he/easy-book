@@ -12,6 +12,7 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   background-color: #ffffff;
   position: fixed;
+  z-index: 2;
   top: 0;
   border-bottom: 1px solid #F0F0F0;
 `

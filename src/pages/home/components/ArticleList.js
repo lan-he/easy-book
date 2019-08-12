@@ -16,8 +16,8 @@ class ArticleList extends PureComponent {
         {
           homeList.map((item, index) => {
             return (
-              <Link to='/detail'>
-                <ArticleItem key={index} item={item}/>
+              <Link to='/detail' key={index}>
+                <ArticleItem item={item}/>
               </Link>
             )
           })
