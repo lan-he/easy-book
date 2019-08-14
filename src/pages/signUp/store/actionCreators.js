@@ -1,4 +1,5 @@
 import * as constants from './constants.js';
+import axios from 'axios'
 
 const changeSignInState = (data) => ({
 	type: constants.CHANGE_SIGNIN_STATE,
@@ -10,5 +11,13 @@ export const userLogOut = () => ({
 export const getSignIn = () => {
   return (dispatch) => {
     dispatch(changeSignInState(true));
+  };
+};
+
+export const signUp = (userInfo) => {
+  return () => {
+    axios.post('/users/register', userInfo).then((res) => {
+      console.log(res);
+    });
   };
 };

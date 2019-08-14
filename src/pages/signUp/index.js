@@ -16,6 +16,17 @@ import {
 } from './style';
 
 class Home extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = {
+      userInfo: {
+        nickname: '',
+        mobile_number: '',
+        password: ''
+      }
+    }
+    this.fromChange = this.fromChange.bind(this);
+  }
   
   render() {
     if (this.props.whetherSignIn) {
@@ -33,12 +44,12 @@ class Home extends PureComponent {
             <span className="active">注册</span>
           </SingTitle>
           <SingInInput>
-            <input className="input-name" placeholder="你的昵称"/>
-            <input className="input-account" placeholder="手机号"/>
-            <input className="input-password" placeholder="设置密码"/>
+            <input value={this.state.userInfo.nickname} onChange={(e) => {this.fromChange(e, 'nickname')}} className="input-name" placeholder="你的昵称"/>
+            <input value={this.state.userInfo.mobile_number} onChange={(e) => {this.fromChange(e, 'mobile_number')}} className="input-account" placeholder="手机号"/>
+            <input value={this.state.userInfo.password}  onChange={(e) => {this.fromChange(e, 'password')}} className="input-password" placeholder="设置密码"/>
           </SingInInput>
           <SingUpButton>
-            <button onClick={this.props.signInEvent}>注册</button>
+            <button onClick={this.props.signUpEvent.bind(this)}>注册</button>
           </SingUpButton>
           <Clause>
             点击 “注册” 即表示您同意并愿意遵守简书 <br/>
@@ -61,6 +72,23 @@ class Home extends PureComponent {
     )
   }
 
+  fromChange(e, type) {
+    const value = e.target.value;
+    const preState = this.state;
+    if (type === 'nickname') {
+      this.setState({
+        userInfo: Object.assign({}, preState.userInfo, { nickname: value })
+      });
+    } else if (type === 'mobile_number') {
+      this.setState({
+        userInfo: Object.assign({}, preState.userInfo, { mobile_number: value })
+      });
+    } else if (type === 'password') {
+      this.setState({
+        userInfo: Object.assign({}, preState.userInfo, { password: value })
+      });
+    }
+  }
 }
 const mapState = (state) => {
   return {
@@ -69,8 +97,8 @@ const mapState = (state) => {
 };
 const mapDispath = (despatch) => {
   return {
-    signInEvent() {
-      despatch(actionCreators.getSignIn());
+    signUpEvent() {
+      despatch(actionCreators.signUp(this.state.userInfo));
     },
   }
 }
