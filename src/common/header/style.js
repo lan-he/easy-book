@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import logoPic from '../../statics/image/header/logo.png';
+import logoPic from '../../statics/image/header/easy-logo.png';
 import bataPic from '../../statics/image/header/bata.png';
 
 export const HeaderWrapper = styled.div`
@@ -20,8 +20,9 @@ export const Logo = styled.div`
   width: 100px;
   height: 56px;
   display: block;
-  background: url(${logoPic});
+  background: url(${logoPic}) no-repeat;
   background-size: contain;
+  background-position: 1px 3px;
 `
 export const Nav = styled.div`
   width: 945px;

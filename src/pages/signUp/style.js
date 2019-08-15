@@ -139,3 +139,16 @@ export const LinkWrap = styled.div`
     color: #498ad5;
   }
 `
+export const MessageTips = styled.div`
+  width: 310px;
+  height: 38px;
+  background-color: #fff;
+  line-height: 38px;
+  text-align: center;
+  border: 1px solid #ea6f5a;
+  border-radius: 5px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 66px;
+`
