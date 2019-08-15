@@ -25,7 +25,6 @@ export const ListItemLeftContent = styled.div`
   .content-title {
     display: block;
     margin-bottom: 10px;
-    color: #000;
     margin-bottom: 10px;
     font-size: 18px;
     font-weight: 700;
@@ -58,10 +57,13 @@ export const Meta = styled.div`
   .diamonds {
     font-size: 12px;
     font-weight: 400;
-    color: #ea6f5a;
     margin-right: 10px;
+    i, span {
+      font-size: 12px;
+      color: #ea6f5a;
+    }
     i {
-      font-size: 16px;
+      font-size: 17px;
     }
   }
   .author {
@@ -70,20 +72,20 @@ export const Meta = styled.div`
     display: block;
   }
   .comment {
-    color: #b4b4b4;
     margin-right: 10px;
     display: block;
-    i {
+    i, span {
       font-size: 12px;
+      color: #b4b4b4;
     }
   }
   .like {
     font-size: 12px;
     font-weight: 400;
-    color: #b4b4b4;
     margin-right: 10px;
-    i {
+    i, span {
       font-size: 12px;
+      color: #b4b4b4;
     }
   }
 `

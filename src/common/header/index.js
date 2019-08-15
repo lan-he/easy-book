@@ -22,6 +22,8 @@ import {
   UserOptions,
   ServiceList,
   SignInFront,
+  PopoverModal,
+  NightPattern
 } from './style';
 
 class Header extends Component {
@@ -148,6 +150,15 @@ class Header extends Component {
             <Container>
               <NavOption>
                 <i className="iconfont typeface">&#xe76a;</i> 
+                <PopoverModal>
+                  <NightPattern>
+                    <span>夜间模式</span>
+                    <div className="switchn">
+                      <div className="switch-left">开</div>
+                      <div className="switch-right active">关</div>
+                    </div>
+                  </NightPattern>
+                </PopoverModal>
               </NavOption>
               <BatePic/>
             </Container>

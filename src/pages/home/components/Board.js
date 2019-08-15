@@ -10,10 +10,10 @@ class Board extends PureComponent {
   render() {
     return (
       <BoardWrapper>
-        {/* <BoardImage className="board-imagea"></BoardImage>
+        <BoardImage className="board-imagea"></BoardImage>
         <BoardImage className="board-imageb"></BoardImage>
         <BoardImage className="board-imagec"></BoardImage>
-        <BoardImage className="board-imaged"></BoardImage> */}
+        <BoardImage className="board-imaged"></BoardImage>
         <BoardQRcode>
           <img alt="" src="//cdn2.jianshu.io/assets/web/download-index-side-qrcode-cb13fc9106a478795f8d10f9f632fccf.png"/>
           <div>

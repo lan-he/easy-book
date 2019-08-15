@@ -10,7 +10,6 @@ export const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #ffffff;
   position: fixed;
   z-index: 2;
   top: 0;
@@ -51,9 +50,52 @@ export const Container = styled.div`
     transform-origin: center center;
   }
 `
+export const PopoverModal = styled.div`
+  width: 237px;
+  height: 216px;
+  position: absolute;
+  top: 41px;
+  left: -185px;
+  padding: 20px 20px 20px 24px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+`
+export const NightPattern = styled.div`
+  width:100%;
+  height: 41px;
+  display: flex;
+  justify-content: space-between;
+  span {
+    font-size: 14px;
+    color: #969696;
+    line-height: 40px;
+  }
+  .switchn {
+    display: flex;
+    width: 90px;
+  }
+  .switch-left, .switch-right {
+    width: 49%;
+    height: 41px;
+    font-size: 14px;
+    line-height: 41px;
+    text-align: center;
+    border-radius: 24px 0 0 24px;
+    border: 1px solid #e5e5e5;
+  } 
+  .switch-right {
+    border-radius: 0 24px 24px 0;
+    border-left: 0px;
+  }
+  .active {
+    background-color: #6dacf4;
+    color: #fff;
+  }
+`
 export const NavOption = styled.div`
   font-size: 17px;
   display: flex;
+  position: relative;
   cursor: pointer;
   justify-content: center;
   align-items: center;
@@ -61,12 +103,16 @@ export const NavOption = styled.div`
     font-size: 20px;
     display: block;
     margin-right: 5px;
+    background-color: transparent;
   }
   &.active {
     width: 90px;
     height: 56px;
     color: #ea6f5a;
     margin-left: 100px;
+    i {
+      color: #ea6f5a;
+    }
   }
   &.app-download {
     width: 100px;
@@ -179,6 +225,9 @@ export const InputIcon = styled.div`
   .search-icon {
     color: #969696;
   }
+  i {
+    background-color: transparent;
+  }
 `
 export const BatePic = styled.div`
   width: 57px;
@@ -198,6 +247,10 @@ export const Addition = styled.div`
 export const Button = styled.div`
   font-size: 15px;
   cursor: pointer;
+  i {
+    background-color: transparent;
+    color: #fff;
+  }
   &.log-in {
     color: #969696;
   }

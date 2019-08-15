@@ -8,6 +8,7 @@ const defaultState = fromJS({
   labelList: [],
   page: 1,
   totalPage: 1,
+  nightPattern: false,
 });
 
 export default (state = defaultState, action) => {

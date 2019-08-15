@@ -50,10 +50,15 @@ export const LRButtons = styled.div`
   width: 625px;
   height: 50px;
   position: absolute;
+  background-color: transparent;
   display: flex;
   justify-content: space-between;
   top: 50%;
   transform: translate(0, -50%);
+  i {
+    background-color: transparent;
+    color: #fff;
+  }
   div {
     width: 40px;
     height: 50px;
