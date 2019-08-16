@@ -1,10 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
-import "./statics/iconfont/iconfont.css"
+import "./statics/iconfont/iconfont.css";
+import puhuiti from './statics/typeface/puhuiti.ttf';
 
 export const GlobalStyle = createGlobalStyle `
-  html, body, div, span, applet, object, iframe,
+  @font-face {
+    font-family: 'puhuiti';
+    src: url(${puhuiti});
+  }
+  html, div, span, applet, object, iframe,
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-  a, abbr, acronym, address, big, cite, code,
+   abbr, acronym, address, big, cite, code,
   del, dfn, em, img, ins, kbd, q, s, samp,
   small, strike, strong, sub, sup, tt, var,
   b, u, i, center,
@@ -20,12 +25,23 @@ export const GlobalStyle = createGlobalStyle `
     border: 0;
     font-size: 100%;
     font: inherit;
-    vertical-align: baseline;
-    text-decoration: none;
+    font-family:"STHeiti";
+  }
+  body {
+    margin: 0;
+    padding: 0;
     color: #000;
     background-color: #fff;
+    font-family:"puhuiti";
     /* color: #969696;
     background: #3f3f3f; */
+  }
+  a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    text-decoration: none;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure, 

@@ -28,6 +28,10 @@ export default (state = defaultState, action) => {
       return state.set('mouseIn', false);
     case constants.CHANGE_PAGE:
       return state.set('page',action.page);
+    case constants.ON_NIGHT_PATTERN:
+      return state.set('nightPattern', true);
+    case constants.OFF_NIGHT_PATTERN:
+      return state.set('nightPattern', false);
     default:
       return state;
   }

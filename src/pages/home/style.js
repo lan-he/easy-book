@@ -220,6 +220,7 @@ export const BoardQRcode = styled.a`
   padding: 10px 22px;
   border-radius: 6px;
   border: 1px solid #f0f0f0;
+  background-color: #fff;
   img {
     width: 60px;
     height: 60px;

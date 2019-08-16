@@ -24,6 +24,7 @@ export const ListItemLeftContent = styled.div`
   display: block;
   .content-title {
     display: block;
+    color: #000;
     margin-bottom: 10px;
     margin-bottom: 10px;
     font-size: 18px;
@@ -31,6 +32,9 @@ export const ListItemLeftContent = styled.div`
     :hover{
       text-decoration: underline;
     }
+  }
+  .nigcolor {
+    color: #969696;
   }
   .content-details {
     font-size: 13px;

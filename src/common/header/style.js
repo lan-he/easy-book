@@ -2,6 +2,15 @@ import styled from 'styled-components';
 import logoPic from '../../statics/image/header/easy-logo.png';
 import bataPic from '../../statics/image/header/bata.png';
 
+export const OutermostLayer = styled.div`
+  .night-color {
+    background-color: #3f3f3f;
+    border-color: #2f2f2f;
+  }
+  .popup-background {
+    background-color: #3f3f3f;
+  }
+` 
 export const HeaderWrapper = styled.div`
   width: 100%;
   height: 58px;
@@ -11,6 +20,7 @@ export const HeaderWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  background-color: #fff;
   z-index: 2;
   top: 0;
   border-bottom: 1px solid #F0F0F0;
@@ -53,6 +63,7 @@ export const Container = styled.div`
 export const PopoverModal = styled.div`
   width: 237px;
   height: 216px;
+  background-color: #fff;
   position: absolute;
   top: 41px;
   left: -185px;
@@ -82,7 +93,7 @@ export const NightPattern = styled.div`
     text-align: center;
     border-radius: 24px 0 0 24px;
     border: 1px solid #e5e5e5;
-  } 
+  }
   .switch-right {
     border-radius: 0 24px 24px 0;
     border-left: 0px;

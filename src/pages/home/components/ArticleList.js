@@ -10,14 +10,14 @@ import {
 
 class ArticleList extends PureComponent {
   render() {
-    const { homeList, loadMore, showLoading } = this.props;
+    const { homeList, loadMore, showLoading, nightPattern } = this.props;
     return (
       <ArticleListWrapper>
         {
           homeList.map((item, index) => {
             return (
               <Link to='/detail' key={index}>
-                <ArticleItem item={item}/>
+                <ArticleItem item={item} nightPattern={nightPattern}/>
               </Link>
             )
           })
@@ -34,6 +34,7 @@ const mapState = (state) => {
   return {
     homeList: state.getIn(['home', 'homeList']),
     showLoading: state.getIn(['home', 'showLoading']),
+    nightPattern: state.getIn(['header', 'nightPattern']),
   }
 }
 

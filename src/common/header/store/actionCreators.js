@@ -23,6 +23,12 @@ export const changePageList = (page) => ({
 	type: constants.CHANGE_PAGE,
 	page: page
 });
+export const onNightMode = () => ({
+	type: constants.ON_NIGHT_PATTERN,
+});
+export const offNightMode = () => ({
+	type: constants.OFF_NIGHT_PATTERN,
+});
 export const getLabelList = () => {
   return (dispatch) => {
     axios.get('/api/headerLabelList.json').then((res) => {

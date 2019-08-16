@@ -6,8 +6,8 @@ import store from './store/index.js';
 import Header from './common/header';
 import Home from './pages/home';
 import Detail from './pages/detail';
-import SignIn from './pages/signIn';
-import SignUp from './pages/signUp';
+import SignIn from './pages/signin';
+import SignUp from './pages/signup';
 import Write from './pages/write';
 
 

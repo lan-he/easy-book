@@ -27,7 +27,7 @@ const ArticleItem = (props) => {
       <ArticleListItem>
         <ListItemLeft>
           <ListItemLeftContent>
-            <span className="content-title">{props.item.get('title')}</span>
+            <span className={props.nightPattern ? 'content-title nigcolor' : 'content-title'}>{props.item.get('title')}</span>
             <span className="content-details">{props.item.get('content')}</span>
           </ListItemLeftContent>
           <Meta>

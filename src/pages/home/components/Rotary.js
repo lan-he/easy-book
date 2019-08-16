@@ -32,7 +32,6 @@ class Rotary extends PureComponent {
         <RotaryContainer>
           {
             this.state.wheelImgs.map((item, index) => {
-              console.log("sada");
               return <img className={index === this.state.wheelPage ? "top-img" : ""} key={item.src} alt="" src={item.src}/>
             })
           }

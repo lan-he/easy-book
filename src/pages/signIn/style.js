@@ -21,16 +21,16 @@ export const SingInMain = styled.div`
 export const SingTitle = styled.div`
   display: flex;
   justify-content: center;
-  color: #969696;
   font-size: 18px;
   margin-bottom: 50px;
   a {
-    padding: 10px 0;
     color: #969696;
   }
   span {
     padding: 10px;
     cursor: pointer;
+    color: #969696;
+    display: block;
     :hover{
       border-bottom: 2px solid #ea6f5a;
     }
@@ -38,11 +38,13 @@ export const SingTitle = styled.div`
   b {
     padding: 10px;
     font-weight: 100;
+    color: #969696;
     margin: 0 5px;
   }
   .active {
     color: #ea6f5a;
     font-weight: 700;
+    display: block;
     border-bottom: 2px solid #ea6f5a;
   }
 `

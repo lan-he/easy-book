@@ -37,6 +37,7 @@ export const SingTitle = styled.div`
   }
   b {
     padding: 10px;
+    color: #969696;
     font-weight: 100;
     margin: 0 5px;
   }

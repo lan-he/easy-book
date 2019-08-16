@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
-import { userLogOut } from '../../pages/signIn/store/actionCreators';
+import { userLogOut } from '../../pages/signin/store/actionCreators';
 import defaultImg from '../../statics/image/header/default.jpg'
 import {
+  OutermostLayer,
   HeaderWrapper,
   Logo,
   Nav,
@@ -27,8 +28,89 @@ import {
 } from './style';
 
 class Header extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      displayHiding: false,
+    }
+    this.setUpSwitch = this.setUpSwitch.bind(this);
+  }
+  componentDidMount(){
+    document.addEventListener('click',(e) => {
+      if(e.target.className !== 'night-pattern'){
+        this.setState({
+          displayHiding: false
+        })
+      }
+    })
+  }
+  render() {
+    const { nightPattern, onNightMode } = this.props;
+    if (this.props.showHeader) {
+      return (
+        <OutermostLayer>
+          <HeaderWrapper className={nightPattern ? 'night-color' : ''}>
+            <Link to="/">
+              <Logo/>
+            </Link>
+            <Nav>
+              {this.loginStatusFind()}
+              <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
+                <NavInput
+                  className="nav-input"
+                  onFocus={() => this.props.headerInputFocus(this.props.labelList)}
+                  onBlur={this.props.headerInputBlur}
+                />
+                <InputIcon className="input-icon">
+                  <i className="iconfont search-icon">&#xe737;</i>
+                </InputIcon>
+                {this.getListArea()}
+              </NavSearch>
+            </Nav>
+            <Addition>
+              <Container>
+                <NavOption className="night-pattern">
+                  <i className="iconfont typeface" onClick={this.setUpSwitch}>&#xe76a;</i> 
+                  {
+                    this.state.displayHiding ? (
+                    <PopoverModal className={nightPattern ? 'popup-background' : ''}>
+                      <NightPattern>
+                        <span>夜间模式</span>
+                        <div className="switchn">
+                          <div className={nightPattern ? 'active switch-left' : 'switch-left'} onClick={() => onNightMode('on')}>开</div>
+                          <div className={nightPattern ? 'switch-right' : 'active switch-right'} onClick={() => onNightMode('off')}>关</div>
+                        </div>
+                      </NightPattern>
+                    </PopoverModal>
+                    ) : null
+                  }
+                </NavOption>
+                <BatePic/>
+              </Container>
+              {this.loginStatusHone()}
+              <Link to="/write">
+                <Button className="write-btn">
+                  <i className="iconfont">&#xe616;</i>
+                  写文章
+                </Button>
+              </Link>
+            </Addition>
+          </HeaderWrapper>
+        </OutermostLayer>
+      )
+    } else {
+      return null
+    }
+  }
+  setUpSwitch(e) {
+    e.nativeEvent.stopImmediatePropagation()
+    this.setState({
+      displayHiding: true,
+    })
+  }
   getListArea() {
-    const { focused, labelList, page, totalPage, handerMouseEnter, handerMouseLeave, mouseIn, handerChangePage} = this.props;
+    // 热门搜索换一批功能
+    const { focused, labelList, page, totalPage, handerMouseEnter, handerMouseLeave, mouseIn, handerChangePage } = this.props;
     const newPage = labelList.toJS();
     const pageList = [];
     if (newPage.length) {
@@ -61,6 +143,7 @@ class Header extends Component {
     } 
   }
   loginStatusHone() {
+    // 判断登陆状态返回不同的顶部信息
     const { whetherSignIn, userLogOut } = this.props;
     if (!whetherSignIn) {
       return (
@@ -90,8 +173,8 @@ class Header extends Component {
       )
     }
   }
-
   loginStatusFind() {
+    // 判断登陆状态返回不同的右侧顶部信息
     const { whetherSignIn } = this.props;
     if (!whetherSignIn) {
       return (
@@ -125,57 +208,6 @@ class Header extends Component {
       )
     }
   }
-  render() {
-    if (this.props.showHeader) {
-      return (
-        <HeaderWrapper>
-          <Link to="/">
-            <Logo/>
-          </Link>
-          <Nav>
-            {this.loginStatusFind()}
-            <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
-              <NavInput
-                className="nav-input"
-                onFocus={() => this.props.headerInputFocus(this.props.labelList)}
-                onBlur={this.props.headerInputBlur}
-              />
-              <InputIcon className="input-icon">
-                <i className="iconfont search-icon">&#xe737;</i>
-              </InputIcon>
-              {this.getListArea()}
-            </NavSearch>
-          </Nav>
-          <Addition>
-            <Container>
-              <NavOption>
-                <i className="iconfont typeface">&#xe76a;</i> 
-                <PopoverModal>
-                  <NightPattern>
-                    <span>夜间模式</span>
-                    <div className="switchn">
-                      <div className="switch-left">开</div>
-                      <div className="switch-right active">关</div>
-                    </div>
-                  </NightPattern>
-                </PopoverModal>
-              </NavOption>
-              <BatePic/>
-            </Container>
-            {this.loginStatusHone()}
-            <Link to="/write">
-              <Button className="write-btn">
-                <i className="iconfont">&#xe616;</i>
-                写文章
-              </Button>
-            </Link>
-          </Addition>
-        </HeaderWrapper>
-      )
-    } else {
-      return null
-    }
-  }
 }
 
 const mapStateToProps = (state) => {
@@ -186,6 +218,7 @@ const mapStateToProps = (state) => {
     page: state.getIn(['header', 'page']),
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn']),
+    nightPattern: state.getIn(['header', 'nightPattern']),
     whetherSignIn: state.getIn(['signIn', 'whetherSignIn']),
   }
 }
@@ -221,7 +254,19 @@ const mapDispathToProps = (despatch) => {
     },
     userLogOut() {
       despatch(userLogOut());
-    }
+    },
+    onNightMode(derail) {
+      if (derail === 'on') {
+        document.body.style.background = '#3f3f3f';
+        document.body.style.color = '#969696';
+        despatch(actionCreators.onNightMode());
+      } else if (derail === 'off') {
+        document.body.style.background = '#ffffff';
+        document.body.style.color = '#000000';
+        despatch(actionCreators.offNightMode());
+      }
+      
+    },
   }
 }
 

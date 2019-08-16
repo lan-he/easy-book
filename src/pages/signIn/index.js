@@ -26,7 +26,9 @@ class Home extends PureComponent {
         <Logo/>
         <SingInMain>
           <SingTitle>
-            <span className="active">登陆</span>
+            <i>
+              <span className="active">登陆</span>
+            </i>
             <b>·</b>
             <Link to="/sign_up">
               <span>注册</span>
