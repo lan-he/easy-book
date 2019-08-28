@@ -34,12 +34,13 @@
 
 [查看演示效果](http://106.13.160.247/)
 
-### 移动端扫描下方二维码
+### 动图展示
 ![](https://i.screenshot.net/8kevzal)
+![](https://i.ibb.co/yWHFMC4/image.gif)
 
 
-
-
+[掘金地址](https://juejin.im/user/5c8f5c11e51d455b3554e3e6)
+[个人博客地址](http://shallowlan.top/)
 # 个人感悟
 
 ## 做React需要会什么？
