@@ -318,7 +318,7 @@ export const UserOptions = styled.div`
   }
 `
 export const ServiceList = styled.div`
-  width: 160px;
+  width: 159px;
   position: absolute;
   left: 1px;
   top: 57px;
