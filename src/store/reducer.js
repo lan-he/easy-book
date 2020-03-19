@@ -6,7 +6,7 @@ import { signInReducer } from '../pages/signin/store';
 const reducer = combineReducers ({
     header: headerReducer,
     home: homeReducer,
-    signIn: signInReducer,
+    signin: signInReducer,
 });
 
 export default reducer;

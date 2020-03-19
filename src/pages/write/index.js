@@ -78,7 +78,7 @@ class Home extends PureComponent {
 }
 const mapState = (state) => {
   return {
-    whetherSignIn: state.getIn(['signIn', 'whetherSignIn'])
+    whetherSignIn: state.getIn(['signin', 'whetherSignIn'])
   }
 };
 const mapDispath = (despatch) => {

@@ -219,7 +219,7 @@ const mapStateToProps = (state) => {
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn']),
     nightPattern: state.getIn(['header', 'nightPattern']),
-    whetherSignIn: state.getIn(['signIn', 'whetherSignIn']),
+    whetherSignIn: state.getIn(['signin', 'whetherSignIn']),
   }
 }
 
