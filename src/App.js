@@ -22,6 +22,7 @@ function App() {
         <Route path='/sign_in' component={SignIn}></Route>
         <Route path='/sign_up' component={SignUp}></Route>
         <Route path='/write' component={Write}></Route>
+        <Route component={Home}/>
       </BrowserRouter>
     </Provider>
   );
