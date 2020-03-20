@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "./static/css/main.b08bf81a.chunk.css",
-    "main.js": "./static/js/main.11112784.chunk.js",
-    "main.js.map": "./static/js/main.11112784.chunk.js.map",
-    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
-    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
-    "static/js/2.4030471f.chunk.js": "./static/js/2.4030471f.chunk.js",
-    "static/js/2.4030471f.chunk.js.map": "./static/js/2.4030471f.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.ff69de91b7edba07be22824b3422758c.js": "./precache-manifest.ff69de91b7edba07be22824b3422758c.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/main.b08bf81a.chunk.css.map": "./static/css/main.b08bf81a.chunk.css.map",
-    "static/media/advert.png": "./static/media/advert.755777d0.png",
-    "static/media/default.jpg": "./static/media/default.cceda3cf.jpg",
-    "static/media/iconfont.css": "./static/media/iconfont.673112e0.svg",
-    "static/media/puhuiti.ttf": "./static/media/puhuiti.8d591595.ttf"
+    "main.css": "/static/css/main.03f4880e.chunk.css",
+    "main.js": "/static/js/main.11112784.chunk.js",
+    "main.js.map": "/static/js/main.11112784.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/js/2.673f61a6.chunk.js": "/static/js/2.673f61a6.chunk.js",
+    "static/js/2.673f61a6.chunk.js.map": "/static/js/2.673f61a6.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.a24a6b1e9090f2284ca8a360ba8ebd9e.js": "/precache-manifest.a24a6b1e9090f2284ca8a360ba8ebd9e.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.03f4880e.chunk.css.map": "/static/css/main.03f4880e.chunk.css.map",
+    "static/media/advert.png": "/static/media/advert.755777d0.png",
+    "static/media/default.jpg": "/static/media/default.cceda3cf.jpg",
+    "static/media/iconfont.css": "/static/media/iconfont.673112e0.svg",
+    "static/media/puhuiti.ttf": "/static/media/puhuiti.8d591595.ttf"
   }
 }
