@@ -16,6 +16,8 @@
  npm start (运行)
 
  npm run build （发布）
+ 
+ git subtree push --prefix=build origin gh-pages
 ```
 
 
