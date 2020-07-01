@@ -30,7 +30,7 @@ class Home extends PureComponent {
               <span className="active">登陆</span>
             </i>
             <b>·</b>
-            <Link to="/sign_up">
+            <Link to="/register">
               <span>注册</span>
             </Link>
           </SingTitle>

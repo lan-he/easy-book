@@ -42,7 +42,7 @@ class Home extends PureComponent {
         }
         <SingInMain>
           <SingTitle>
-            <Link to="/sign_in">
+            <Link to="/login">
               <span>登陆</span>
             </Link>
             <b>·</b>

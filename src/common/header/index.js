@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { actionCreators } from './store';
-import { userLogOut } from '../../pages/login/store/actionCreators';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { actionCreators } from './store'
+import { userLogOut } from '../../pages/login/store/actionCreators'
 import defaultImg from '../../statics/image/header/default.jpg'
 import {
   OutermostLayer,
@@ -24,41 +24,43 @@ import {
   ServiceList,
   SignInFront,
   PopoverModal,
-  NightPattern
-} from './style';
+  NightPattern,
+} from './style'
 
 class Header extends Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       displayHiding: false,
     }
-    this.setUpSwitch = this.setUpSwitch.bind(this);
+    this.setUpSwitch = this.setUpSwitch.bind(this)
   }
-  componentDidMount(){
-    document.addEventListener('click',(e) => {
-      if(e.target.className !== 'night-pattern'){
+  componentDidMount() {
+    document.addEventListener('click', (e) => {
+      if (e.target.className !== 'night-pattern') {
         this.setState({
-          displayHiding: false
+          displayHiding: false,
         })
       }
     })
   }
   render() {
-    const { nightPattern, onNightMode } = this.props;
+    const { nightPattern, onNightMode } = this.props
     if (this.props.showHeader) {
       return (
         <OutermostLayer>
           <HeaderWrapper className={nightPattern ? 'night-color' : ''}>
             <Link to="/">
-              <Logo/>
+              <Logo />
             </Link>
             <Nav>
               {this.loginStatusFind()}
               <NavSearch className={this.props.focused ? 'focused' : 'blured'}>
                 <NavInput
                   className="nav-input"
-                  onFocus={() => this.props.headerInputFocus(this.props.labelList)}
+                  onFocus={() =>
+                    this.props.headerInputFocus(this.props.labelList)
+                  }
                   onBlur={this.props.headerInputBlur}
                 />
                 <InputIcon className="input-icon">
@@ -70,22 +72,42 @@ class Header extends Component {
             <Addition>
               <Container>
                 <NavOption className="night-pattern">
-                  <i className="iconfont typeface" onClick={this.setUpSwitch}>&#xe76a;</i> 
-                  {
-                    this.state.displayHiding ? (
-                    <PopoverModal className={nightPattern ? 'popup-background' : ''}>
+                  <i className="iconfont typeface" onClick={this.setUpSwitch}>
+                    &#xe76a;
+                  </i>
+                  {this.state.displayHiding ? (
+                    <PopoverModal
+                      className={nightPattern ? 'popup-background' : ''}
+                    >
                       <NightPattern>
                         <span>夜间模式</span>
                         <div className="switchn">
-                          <div className={nightPattern ? 'active switch-left' : 'switch-left'} onClick={() => onNightMode('on')}>开</div>
-                          <div className={nightPattern ? 'switch-right' : 'active switch-right'} onClick={() => onNightMode('off')}>关</div>
+                          <div
+                            className={
+                              nightPattern
+                                ? 'active switch-left'
+                                : 'switch-left'
+                            }
+                            onClick={() => onNightMode('on')}
+                          >
+                            开
+                          </div>
+                          <div
+                            className={
+                              nightPattern
+                                ? 'switch-right'
+                                : 'active switch-right'
+                            }
+                            onClick={() => onNightMode('off')}
+                          >
+                            关
+                          </div>
                         </div>
                       </NightPattern>
                     </PopoverModal>
-                    ) : null
-                  }
+                  ) : null}
                 </NavOption>
-                <BatePic/>
+                <BatePic />
               </Container>
               {this.loginStatusHone()}
               <Link to="/write">
@@ -110,28 +132,49 @@ class Header extends Component {
   }
   getListArea() {
     // 热门搜索换一批功能
-    const { focused, labelList, page, totalPage, handerMouseEnter, handerMouseLeave, mouseIn, handerChangePage } = this.props;
-    const newPage = labelList.toJS();
-    const pageList = [];
+    const {
+      focused,
+      labelList,
+      page,
+      totalPage,
+      handerMouseEnter,
+      handerMouseLeave,
+      mouseIn,
+      handerChangePage,
+    } = this.props
+    const newPage = labelList.toJS()
+    const pageList = []
     if (newPage.length) {
       for (let i = (page - 1) * 10; i < page * 10; i++) {
         pageList.push(
           <SearchInfoItem key={newPage[i]}>
-            <a href="/" className="item-a">{newPage[i]}</a>
+            <a href="/" className="item-a">
+              {newPage[i]}
+            </a>
           </SearchInfoItem>
-        );
+        )
       }
     }
     if (focused || mouseIn) {
       return (
-        <SearchInfo 
+        <SearchInfo
           onMouseEnter={handerMouseEnter}
           onMouseLeave={handerMouseLeave}
         >
           <SearchInfoTitle>
             <Container>热门搜索</Container>
-            <Container className="search-change" onClick={() => handerChangePage(page, totalPage, this.spinIcon)}>
-              <i ref={(icon) => {this.spinIcon = icon}} className="iconfont icon-change">&#xe63f;</i> 
+            <Container
+              className="search-change"
+              onClick={() => handerChangePage(page, totalPage, this.spinIcon)}
+            >
+              <i
+                ref={(icon) => {
+                  this.spinIcon = icon
+                }}
+                className="iconfont icon-change"
+              >
+                &#xe63f;
+              </i>
               换一批
             </Container>
           </SearchInfoTitle>
@@ -139,19 +182,19 @@ class Header extends Component {
         </SearchInfo>
       )
     } else {
-      return null;
-    } 
+      return null
+    }
   }
   loginStatusHone() {
     // 判断登陆状态返回不同的顶部信息
-    const { whetherSignIn, userLogOut } = this.props;
+    const { whetherSignIn, userLogOut } = this.props
     if (!whetherSignIn) {
       return (
         <SignInFront>
-          <Link to="/sign_in">
+          <Link to="/login">
             <Button className="log-in">登录</Button>
           </Link>
-          <Link to="/sign_up">
+          <Link to="/register">
             <Button className="sign-up">注册</Button>
           </Link>
         </SignInFront>
@@ -159,7 +202,7 @@ class Header extends Component {
     } else {
       return (
         <UserOptions>
-          <img alt="" src={defaultImg}/>
+          <img alt="" src={defaultImg} />
           <i className="iconfont">&#xe603;</i>
           <ServiceList className="service-list">
             <Link to="/">
@@ -175,7 +218,7 @@ class Header extends Component {
   }
   loginStatusFind() {
     // 判断登陆状态返回不同的右侧顶部信息
-    const { whetherSignIn } = this.props;
+    const { whetherSignIn } = this.props
     if (!whetherSignIn) {
       return (
         <Container>
@@ -226,48 +269,47 @@ const mapStateToProps = (state) => {
 const mapDispathToProps = (despatch) => {
   return {
     headerInputFocus(labelList) {
-      (labelList.size === 0) && despatch(actionCreators.getLabelList());
-      despatch(actionCreators.searchFocus());
+      labelList.size === 0 && despatch(actionCreators.getLabelList())
+      despatch(actionCreators.searchFocus())
     },
     headerInputBlur() {
-      despatch(actionCreators.searchBlur());
+      despatch(actionCreators.searchBlur())
     },
     handerMouseEnter() {
-      despatch(actionCreators.mouseEnter());
+      despatch(actionCreators.mouseEnter())
     },
     handerMouseLeave() {
-      despatch(actionCreators.mouseLeave());
+      despatch(actionCreators.mouseLeave())
     },
     handerChangePage(page, totalPage, spinIcon) {
-      let originAngle = spinIcon.style.transform.replace(/[^0-9]/ig, '');
+      let originAngle = spinIcon.style.transform.replace(/[^0-9]/gi, '')
       if (originAngle) {
-        originAngle = parseInt(originAngle, 10);
+        originAngle = parseInt(originAngle, 10)
       } else {
-        originAngle = 0;
+        originAngle = 0
       }
-      spinIcon.style.transform = 'rotate('+(originAngle + 360)+'deg)';
+      spinIcon.style.transform = 'rotate(' + (originAngle + 360) + 'deg)'
       if (page < totalPage) {
-        despatch(actionCreators.changePageList(page + 1));
+        despatch(actionCreators.changePageList(page + 1))
       } else {
-        despatch(actionCreators.changePageList(1));
+        despatch(actionCreators.changePageList(1))
       }
     },
     userLogOut() {
-      despatch(userLogOut());
+      despatch(userLogOut())
     },
     onNightMode(derail) {
       if (derail === 'on') {
-        document.body.style.background = '#3f3f3f';
-        document.body.style.color = '#969696';
-        despatch(actionCreators.onNightMode());
+        document.body.style.background = '#3f3f3f'
+        document.body.style.color = '#969696'
+        despatch(actionCreators.onNightMode())
       } else if (derail === 'off') {
-        document.body.style.background = '#ffffff';
-        document.body.style.color = '#000000';
-        despatch(actionCreators.offNightMode());
+        document.body.style.background = '#ffffff'
+        document.body.style.color = '#000000'
+        despatch(actionCreators.offNightMode())
       }
-      
     },
   }
 }
 
-export default connect(mapStateToProps, mapDispathToProps)(Header);
+export default connect(mapStateToProps, mapDispathToProps)(Header)

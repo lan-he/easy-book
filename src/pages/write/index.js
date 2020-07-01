@@ -36,7 +36,7 @@ class Home extends PureComponent {
   
   render() {
     if (!this.props.whetherSignIn) {
-      return <Redirect to="/sign_in"/>
+      return <Redirect to="/login"/>
     }
     const { value, toolbar } = this.state;
     return (
