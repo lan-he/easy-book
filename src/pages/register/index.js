@@ -97,7 +97,7 @@ class Home extends PureComponent {
 }
 const mapState = (state) => {
   return {
-    whetherSignIn: state.getIn(['signin', 'whetherSignIn'])
+    whetherSignIn: state.getIn(['login', 'whetherSignIn'])
   }
 };
 const mapDispath = (despatch) => {
@@ -114,7 +114,7 @@ const mapDispath = (despatch) => {
         },1000)
         return
       }
-      despatch(actionCreators.signUp(this.state.userInfo));
+      despatch(actionCreators.registered(this.state.userInfo));
     },
   }
 }

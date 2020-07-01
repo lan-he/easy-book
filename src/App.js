@@ -6,8 +6,8 @@ import store from './store/index.js';
 import Header from './common/header';
 import Home from './pages/home';
 import Detail from './pages/detail';
-import SignIn from './pages/signin';
-import SignUp from './pages/signup';
+import Login from './pages/login';
+import Register from './pages/register';
 import Write from './pages/write';
 
 
@@ -19,10 +19,9 @@ function App() {
         <Header/>
         <Route path='/' exact component={Home}></Route>
         <Route path='/detail' component={Detail}></Route>
-        <Route path='/sign_in' component={SignIn}></Route>
-        <Route path='/sign_up' component={SignUp}></Route>
+        <Route path='/login' component={Login}></Route>
+        <Route path='/register' component={Register}></Route>
         <Route path='/write' component={Write}></Route>
-        <Route component={Home}/>
       </BrowserRouter>
     </Provider>
   );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { actionCreators } from './store';
-import { userLogOut } from '../../pages/signin/store/actionCreators';
+import { userLogOut } from '../../pages/login/store/actionCreators';
 import defaultImg from '../../statics/image/header/default.jpg'
 import {
   OutermostLayer,
@@ -219,7 +219,7 @@ const mapStateToProps = (state) => {
     totalPage: state.getIn(['header', 'totalPage']),
     mouseIn: state.getIn(['header', 'mouseIn']),
     nightPattern: state.getIn(['header', 'nightPattern']),
-    whetherSignIn: state.getIn(['signin', 'whetherSignIn']),
+    whetherSignIn: state.getIn(['login', 'whetherSignIn']),
   }
 }
 

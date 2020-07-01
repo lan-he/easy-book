@@ -34,7 +34,6 @@ export const RotaryWrapper = styled.div`
 export const RotaryContainer = styled.div`
   width: 625px;
   height: 270px;
-  
   img {
     width: 625px;
     height: 270px;
